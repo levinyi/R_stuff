@@ -6,7 +6,7 @@
 
 # 07. hist vs ggplot2 geom_histogram
 see https://www.jianshu.com/p/16e2022c025d
-
+```
 data = read.csv("C:\\Users\\cy006\\Desktop\\01.R_test.csv", header=T)
 
 ID = c(0,1,2,3,4,5)
@@ -28,3 +28,4 @@ library(ggplot2)
 
 ggplot(data, aes(x=Height, y=..count..  )) + geom_histogram(stat="bin", binwidth = 4, colour="black", fill="white")
 ggplot(data, aes(x=Height, y=..density..)) + geom_histogram(stat="bin", binwidth = 4, colour="black", fill="white")
+```
