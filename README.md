@@ -29,3 +29,7 @@ library(ggplot2)
 ggplot(data, aes(x=Height, y=..count..  )) + geom_histogram(stat="bin", binwidth = 4, colour="black", fill="white")
 ggplot(data, aes(x=Height, y=..density..)) + geom_histogram(stat="bin", binwidth = 4, colour="black", fill="white")
 ```
+
+# R_Graphics_Cookbook.R
+
+is a book note of the "R Graphics Cookbook", learning ...
