@@ -37,3 +37,9 @@ is a book note of the "R Graphics Cookbook", learning ...
 # ggplot violin graph
 
 igblast.result.visualization.R
+
+for example
+```
+Rscript igblast.result.visualization.R
+# may generate a pdf file with violin plot.
+```
