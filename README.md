@@ -34,10 +34,6 @@ ggplot(data, aes(x=Height, y=..density..)) + geom_histogram(stat="bin", binwidth
 
 is a book note of the "R Graphics Cookbook", learning ...
 
-
 # ggplot violin graph
 
 igblast.result.visualization.R
-```
-
-```
