@@ -43,3 +43,8 @@ for example
 Rscript igblast.result.visualization.R
 # may generate a pdf file with violin plot.
 ```
+
+# R Graphics Cookbook learning
+
+R_Graphics_Cookbook.2.R is a note book.
+
