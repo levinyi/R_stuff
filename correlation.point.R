@@ -13,8 +13,8 @@ for (each_file in args) {
         geom_point(size=1.5) + # default size is 2
         geom_smooth(method=lm, se=FALSE) +
         xlab(names(data)[2]) + ylab(names(data)[3]) +
-    	annotate("text",x=-Inf,y= Inf,hjust=0,vjust=0.99,label=paste(paste( "pearson", round(c,4), sep=":"),paste("spearman", round(d,4), sep=":"),sep=("\n"))) +
-	xlim(min(data[,2]),max(data[,3]))
+    	annotate("text",x=-Inf,y= Inf,hjust=0,vjust=0.99,label=paste(paste( "pearson", round(c,4), sep=":"),paste("spearman", round(d,4), sep=":"),sep=("\n"))) 
+#	xlim(min(data[,2]),max(data[,3]))
 	#annotate("text",x=-Inf,y= Inf,hjust=0,vjust=1,label=paste("spearman", d, sep=":"))
     outputname = paste(name, index, "corelation.jpg", sep=".")
     #outputname = paste("03",as.character(index),"corelation.pdf",sep=".")
