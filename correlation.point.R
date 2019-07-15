@@ -15,7 +15,9 @@ for (each_file in args) {
 	geom_abline()+ # line: y=x
         xlab(names(data)[2]) + ylab(names(data)[3]) +
     	annotate("text",x=-Inf,y= Inf,hjust=0,vjust=0.99,label=paste(paste( "pearson", round(c,4), sep=":"),paste("spearman", round(d,4), sep=":"),sep=("\n"))) +
-	xlim(min(data[,2]),max(data[,3])) +
+	#xlim(min(data[,2]),max(data[,2])) +
+	scale_x_continuous(limits=c(0,max(data[,2])))+
+	scale_y_continuous(limits=c(0,max(data[,3])))+
 	theme(panel.background = element_blank(),
 	      panel.border = element_rect(fill=NA),
 	      axis.line=element_line())
