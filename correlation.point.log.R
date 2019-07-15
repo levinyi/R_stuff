@@ -15,13 +15,15 @@ for (each_file in args) {
 	geom_abline()+ # line: y=x
         xlab(names(data)[2]) + ylab(names(data)[3]) +
     	annotate("text",x=-Inf,y= Inf,hjust=0,vjust=0.99,label=paste(paste( "pearson", round(c,4), sep=":"),paste("spearman", round(d,4), sep=":"),sep=("\n"))) +
-	xlim(min(log(data[,2],10)),max(log(data[,3],10))) +
+	#xlim(min(log(data[,2],10)),max(log(data[,2],10))) +
+	scale_x_continuous(limits=c(0,max(log(data[,2],10))))+
+	scale_y_continuous(limits=c(0,max(log(data[,3],10))))+
 	theme(panel.background=element_blank(),
 	      panel.border=element_rect(fill=NA),
 	      axis.line=element_line()
 	      )
 	#annotate("text",x=-Inf,y= Inf,hjust=0,vjust=1,label=paste("spearman", d, sep=":"))
-    outputname = paste(name, index, "corelation.jpg", sep=".")
+    outputname = paste(name, index, "corelation.log.jpg", sep=".")
     #outputname = paste("03",as.character(index),"corelation.pdf",sep=".")
     #print(outputname)
     ggsave(outputname)
