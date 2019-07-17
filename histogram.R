@@ -7,7 +7,7 @@ data = read.table(args[1],header=F)
 ggplot(data,aes(x=data$V2)) + 
 	geom_histogram(aes(y =..count..), binwidth=1)+
 	xlab("") +
-	scale_x_continuous(limits=c(0,100),breaks=seq(0,100,1)) +
+	scale_x_continuous(limits=c(0,max(data$V2)),breaks=seq(0,100,1)) +
 	theme(
 	      panel.background = element_blank(),
 	      axis.line = element_line(),
