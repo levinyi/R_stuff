@@ -7,8 +7,8 @@ for (each_file in args) {
     name = unlist(strsplit(name, "\\."))[1]
     data = read.table(each_file, header=T)
         #cor(x=log(data[,2],10),y=log(data[,3],10),method="spearman"
-    c = cor(data[,2],data[,3],method="pearson")
-    d = cor(data[,2],data[,3],method="spearman")
+    c = cor(data[,2],data[,3],method="pearson") # person coefficient of association
+    d = cor(data[,2],data[,3],method="spearman") # spearman coefficient of association
     ggplot(data, aes(data[,2], data[,3])) +
         geom_point(size=1.5) + # default size is 2
         #geom_smooth(method=lm, se=FALSE) + # trend line
