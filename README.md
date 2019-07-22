@@ -52,7 +52,9 @@ R_Graphics_Cookbook.2.R is a note book.
 see: https://www.jianshu.com/p/05f4bae28443
 Rscript venn.R \<file1\> \<file2\> ...
 ![pairwise venn diagram](VennDiagram.pairwise.png)
+1[VennDiagram.triple.png](VennDiagram.triple.png)
 ![VennDiagram.quad.png](VennDiagram.quad.png)
+![VennDiagram.quintuple.png](VennDiagram.quintuple.png)
 
 # basic boxplot
 Rscript ggplot_boxplot_basic.R \<file\>
