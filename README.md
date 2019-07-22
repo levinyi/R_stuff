@@ -60,6 +60,6 @@ Rscript venn.R \<file1\> \<file2\> ...
 Rscript ggplot_boxplot_basic.R \<file\>
 
 # geom_boxplot
-Rscript geom_boxplot.R \<boxplot.data.txt\> 
-![geom_boxplot.R](geom_boxplot.R)
+Rscript geom_boxplot.R \<boxplot.data.txt\> ... 
+![boxplot.png](boxplot.png)
 
