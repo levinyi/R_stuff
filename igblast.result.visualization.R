@@ -24,9 +24,10 @@ library(ggplot2)
 #ggplot(data2, aes(x=evalue, y=length, colour=symbol)) + geom_point(alpha=.04, size=0.01)
 #jpg("myplot.test.jpg", width=40, height=20, unit="cm", dpi=72)
 
-data3 = read.table("mydata.mix.common.right.fish.4gene.txt", header=F)
+args = comandArgs(T)
+#data3 = read.table("mydata.mix.common.right.fish.4gene.txt", header=F)
+data3 = read.table(args[1], header=F)
 names(data3) = c("symbol", "type", "id", "gene", "identity", "length", "A","B","C","D","E","F","G","evalue","bitscore")
-jpeg("myplot.2.jpeg", unit="px")
 ggplot(data3, aes(x=evalue, y=length, colour=symbol)) + geom_point(alpha=.04, size=0.01)
-dev.off()
+ggsave("igblast.result.jpg")
 
