@@ -17,7 +17,7 @@ for (each_file in args) {
     ggplot(data, aes(data[,2], data[,3])) +
         geom_point(size=1.5) + # default size is 2
         #geom_smooth(method=lm, se=FALSE) + # trend line
-	geom_abline()+ # line: y=x
+	#geom_abline()+ # line: y=x
         xlab(names(data)[2]) + ylab(names(data)[3]) +
     	annotate("text",x=-Inf,y= Inf,hjust=0,vjust=0.99,label=paste(paste( "pearson", round(c,4), sep=":"),paste("spearman", round(d,4), sep=":"),sep=("\n"))) +
 	#xlim(min(data[,2]),max(data[,2])) +
