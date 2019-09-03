@@ -11,10 +11,10 @@ for (each_file in args) {
     d = cor(data[,2],data[,3],method="spearman") # spearman coefficient of association
     data[,2] = data[,2] + 1 # log(1,2) = 0
     data[,3] = data[,3] + 1 # log(1,2) = 0
-    if(max(data[,2]) > max(data[,3])){
-            max_scale = max(data[,2])
+    if(max(log(data[,2],2)) > max(log(data[,3],2))){
+            max_scale = max(log(data[,2],2))
     }else{
-            max_scale = max(data[,3])
+            max_scale = max(log(data[,3],2))
     }
 
     ggplot(data, aes(log(data[,2], 2), log(data[,3],2))) +
@@ -24,10 +24,13 @@ for (each_file in args) {
         xlab(names(data)[2]) + ylab(names(data)[3]) +
     	annotate("text",x=-Inf,y= Inf,hjust=0,vjust=0.99,label=paste(paste( "pearson", round(c,4), sep=":"),paste("spearman", round(d,4), sep=":"),sep=("\n"))) +
 	#xlim(min(log(data[,2],10)),max(log(data[,2],10))) +
+	
 	#scale_x_continuous(limits=c(0, max(log(data[,2],2))))+
 	scale_x_continuous(limits=c(0, max_scale))+
+
 	#scale_y_continuous(limits=c(0, max(log(data[,3],2))))+
 	scale_y_continuous(limits=c(0, max_scale))+
+	
 	theme(panel.background=element_blank(),
 	      panel.border=element_rect(fill=NA),
 	      axis.line=element_line()
