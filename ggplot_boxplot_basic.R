@@ -1,21 +1,23 @@
 library(ggplot2)
 args = commandArgs(T)
-for (each_file in args){
-	a = unlist(strsplit(each_file,"/"))
-	name = a[length(a)]
-	name = unlist(strsplit(name,"\\."))[1]
-	data = read.table(each_file,header=F)
+	
+a = unlist(strsplit(args[1], "/"))
+name = a[length(a)]
+name = unlist(strsplit(name,"\\."))[1]
 
-	ggplot(data,aes(y=data$V2)) + 
-		geom_boxplot() + 
-		xlab("") + ylab("") + 
-		#ggtitle("sample SR")+
-		theme(legend.title=element_blank(),
-		      panel.background = element_blank(),
-		      axis.line = element_line(),
-		      panel.border = element_rect(fill=NA),
-		      )+
-		scale_y_continuous(limits=c(0,150),breaks=seq(0,150,5))
-		#scale_fill_manual(values=c("white","grey"))
-	ggsave("boxplot.png")
-}
+data = read.table(args[1], header=F)
+colnames(data)[value_column] <- "value"
+ggplot(data,aes(y=data$value)) + 
+	geom_boxplot() + 
+	xlab("") + ylab("") + 
+	ggtitle(name)+
+	theme(legend.title=element_blank(),
+	      panel.background = element_blank(),
+	      axis.line = element_line(),
+	      panel.border = element_rect(fill=NA),
+	      )+
+	scale_y_continuous(limits=c(0,150),breaks=seq(0,150,5))
+	#scale_fill_manual(values=c("white","grey"))
+output_file_name = paste(name,"basic.boxplot.png",sep=".")
+ggsave(output_file_name)
+print(paste("output file is : ",output_file_name,sep=""))
