@@ -1,14 +1,14 @@
 library(VennDiagram)
 args=commandArgs(T)
 
-a = length(args)
-if ( a == 2 ){
+args_length = length(args)
+if ( args_length == 2 ){
 	A = scan(args[1], what=character(0))
 	B = scan(args[2], what=character(0))
 	print("2 files")
 	file_name1 = unlist(strsplit(args[1],"\\."))[1]
 	file_name2 = unlist(strsplit(args[2],"\\."))[1]
-	print(file_name1)
+	
 	venn.diagram(list(A=A, A=B), 
 	     resolution = 300, imagetype = "png", 
 	     cat.fontface=4, fontfamily=3,
@@ -18,7 +18,8 @@ if ( a == 2 ){
 	     main="", main.cex = 2,main.fontface=2, main.fontfamily=3,
 	     filename = "VennDiagram.pairwise.png")
 	print("Output graph : VennDiagram.pairwise.png")
-}else if ( a == 3 ){
+
+}else if ( args_length == 3 ){
 	A = scan(args[1],what="c")
 	B = scan(args[2],what="c")
 	C = scan(args[3],what="c")
@@ -37,7 +38,8 @@ if ( a == 2 ){
 	     main="", main.cex = 2,main.fontface=2, main.fontfamily=3,
 	     filename = "VennDiagram.triple.png")
 	print("Output graph : VennDiagram.triple.png")
-}else if ( a == 4 ){
+
+}else if ( args_length == 4 ){
 	A = scan(args[1],what="c")
 	B = scan(args[2],what="c")
 	C = scan(args[3],what="c")
@@ -47,7 +49,6 @@ if ( a == 2 ){
 	file_name2 = unlist(strsplit(args[2],"\\."))[1]
 	file_name3 = unlist(strsplit(args[3],"\\."))[1]
 	file_name4 = unlist(strsplit(args[4],"\\."))[1]
-	print(file_name1)
 
 	venn.diagram(list(A=A, B=B,C=C,D=D), 
 	     resolution = 300, imagetype = "png", 
@@ -59,22 +60,22 @@ if ( a == 2 ){
 	     main="", main.cex = 2,main.fontface=2, main.fontfamily=3,
 	     filename = "VennDiagram.quad.png")
 	print("Output graph : VennDiagram.quad.png")
-}else if ( a == 5 ){
-	A = scan(args[1],what="c")
-	B = scan(args[2],what="c")
-	C = scan(args[3],what="c")
-	D = scan(args[4],what="c")
-	E = scan(args[5],what="c")
+
+}else if ( args_length == 5 ){
+	A = scan(args[1], what="c")
+	B = scan(args[2], what="c")
+	C = scan(args[3], what="c")
+	D = scan(args[4], what="c")
+	E = scan(args[5], what="c")
 	print("5 files")
-	file_name1 = unlist(strsplit(args[1],"\\."))[1]
-	file_name2 = unlist(strsplit(args[2],"\\."))[1]
-	file_name3 = unlist(strsplit(args[3],"\\."))[1]
-	file_name4 = unlist(strsplit(args[4],"\\."))[1]
-	file_name5 = unlist(strsplit(args[5],"\\."))[1]
-	print(file_name1)
+	file_name1 = unlist(strsplit(args[1], "\\."))[1]
+	file_name2 = unlist(strsplit(args[2], "\\."))[1]
+	file_name3 = unlist(strsplit(args[3], "\\."))[1]
+	file_name4 = unlist(strsplit(args[4], "\\."))[1]
+	file_name5 = unlist(strsplit(args[5], "\\."))[1]
 	
-	venn.diagram(list(A=A, B=B, C=C, D=D, E=E), 
-	     resolution = 300, imagetype = "png", 
+	venn.diagram(list(A=A, B=B, C=C, D=D, E=E),
+	     resolution = 300, imagetype = "png",
 	     cat.fontface=4, fontfamily=3,
 	     category.names = c(file_name1,file_name2,file_name3,file_name4,file_name5),
 	     fill = c("dodgerblue", "goldenrod1", "darkorange1", "seagreen3", "orchid3"),
