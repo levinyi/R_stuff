@@ -5,21 +5,6 @@ require(cowplot)
 data = read.table("all_sample_1M_bin_reads_pct.xls",header = F)
 #data = read.table(args[1], header=F)
 data$V5 = factor(data$V5,labels = c("IS","Health"))
-# head(data)
-# #alist = list()
-# chrome = c("chr1" ,"chr10" ,"chr11" ,"chr12" ,"chr13" ,"chr14" ,"chr15" ,"chr16" ,"chr17" ,"chr18" ,"chr19" ,"chr2" ,"chr20" ,"chr21" ,"chr22" ,"chr3" ,"chr4" ,"chr5" ,"chr6" ,"chr7" ,"chr8" ,"chr9" ,"chrM" ,"chrX" ,"chrY")
-# for (each_chrome in chrome) {
-#         data2 = data[data$V2==each_chrome,]
-#         p1 = ggplot(data2, aes(x=V3,y=V4,label=round(V4, digits = 2),group=V5,color=V5))+stat_summary(fun.y="mean",geom = "point") +
-#         xlab("bins") + ylab("mean percentage") +ggtitle(each_chrome) +theme(plot.title = element_text(hjust = 0.5))+
-#         scale_y_continuous(labels=scales::percent, expand=c(0,0))+expand_limits(x=0)+
-#         scale_x_continuous(expand = c(0, 0))+
-#             theme(legend.title = element_blank())
-#         
-        #output_name = paste("1M_bins",each_chrome,"mean.jpg",sep=".")
-        #ggsave(output_name)
-#        list.append(alist)
-# }
 
 p1 = ggplot(data[data$V2=="chr1",], aes(x=V3,y=V4,label=round(V4, digits = 2),group=V5,color=V5))+stat_summary(fun.y="mean",geom = "point") +
   xlab("bins") + ylab("mean percentage") +ggtitle("chr1") +theme(plot.title = element_text(hjust = 0.5))+
@@ -101,28 +86,28 @@ p25 = ggplot(data[data$V2=="chrM",], aes(x=V3,y=V4,label=round(V4, digits = 2),g
 ggdraw() +
   draw_plot(p1 , 0,    0.8, 0.2, 0.2) +
   draw_plot(p2 , 0.2,  0.8, 0.2, 0.2) +
-  draw_plot(p3 , 0.4,  0.8, 0.2, 0.2)+
+  draw_plot(p3 , 0.4,  0.8, 0.2, 0.2) +
   draw_plot(p4 , 0.6,  0.8, 0.2, 0.2) +
   draw_plot(p5 , 0.8,  0.8, 0.2, 0.2) +
-  draw_plot(p6 , 0,    0.6, 0.2, 0.2)+
+  draw_plot(p6 , 0,    0.6, 0.2, 0.2) +
   draw_plot(p7 , 0.2,  0.6, 0.2, 0.2) +
   draw_plot(p8 , 0.4,  0.6, 0.2, 0.2) +
-  draw_plot(p9 , 0.6,  0.6, 0.2, 0.2)+
+  draw_plot(p9 , 0.6,  0.6, 0.2, 0.2) +
   draw_plot(p10, 0.8,  0.6, 0.2, 0.2) +
   draw_plot(p11, 0,    0.4, 0.2, 0.2) +
-  draw_plot(p12, 0.2,  0.4, 0.2, 0.2)+
+  draw_plot(p12, 0.2,  0.4, 0.2, 0.2) +
   draw_plot(p13, 0.4,  0.4, 0.2, 0.2) +
   draw_plot(p14, 0.6,  0.4, 0.2, 0.2) +
-  draw_plot(p15, 0.8,  0.4, 0.2, 0.2)+
+  draw_plot(p15, 0.8,  0.4, 0.2, 0.2) +
   draw_plot(p16, 0,    0.2, 0.2, 0.2) +
   draw_plot(p17, 0.2,  0.2, 0.2, 0.2) +
-  draw_plot(p18, 0.4,  0.2, 0.2, 0.2)+
+  draw_plot(p18, 0.4,  0.2, 0.2, 0.2) +
   draw_plot(p19, 0.6,  0.2, 0.2, 0.2) +
   draw_plot(p20, 0.8,  0.2, 0.2, 0.2) +
-  draw_plot(p21, 0,    0,   0.2, 0.2)+
+  draw_plot(p21, 0,    0,   0.2, 0.2) +
   draw_plot(p22, 0.2,  0,   0.2, 0.2) +
   draw_plot(p23, 0.4,  0,   0.2, 0.2) +
-  draw_plot(p24, 0.6,  0,   0.2, 0.2)+
+  draw_plot(p24, 0.6,  0,   0.2, 0.2) +
   draw_plot(p25, 0.8,  0,   0.2, 0.2)
   
 ggsave("1M_means.jpg")
