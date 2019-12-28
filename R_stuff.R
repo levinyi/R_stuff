@@ -1,0 +1,110 @@
+data = read.table("C:\\Users\\cy006\\Desktop\\trend.txt",header=F,sep="\t",fill = TRUE)
+header = data[1,-1]
+header
+x = data[2,-1]
+x
+plot(header,x,pch=)
+data = as.matrix(data[,-1])
+data[1,]
+x = c(1,2,3,4,5,6,7,8,9,10)
+y= c(100,200,300,6,50,752,68.4,784,2851)
+plot(x,y,pch=x)
+plot(x,x,pch=x)
+lines(10,15,type = "b",pch=5)
+plot(x,y,type="p",pch=x)
+plot(x,y,type ="l",pch=x)
+plot(x,y,type = "b",pch=x)
+plot(x,y,type = "c",pch=x)
+plot(x,y,type = "o",pch=x)
+plot(x,y,type = "s",pch=x)
+plot(x,y,type = "h",pch=x)
+plot(x,y,type = "n",pch=x)
+a=c(1,10)
+plot(a,a,type="b",lty=2)
+par(mgp=c(1.6,0.6,0),mar=c(3,3,2,1))
+X=1:10;Y=1:10
+line_type=c(1:6)
+line_width=seq(from=0.6,by=0.6,length=6)
+plot(X,Y,col="blue",pch=16,type="n",main="line type and line width",font.lab=2,cex.lab=1.2)
+abline(h=3:8,lty=line_type,col=colors()[120:126],lwd=line_width)
+text(3:8,3:8,adj=0,labels=paste("lty=",line_type,",lwd=",line_width),col="red",cex=1.2,font=3)
+library(TSA)
+head(larain)
+data(larain)
+head(data)
+plot(x, x, pch = x, cex = x)
+a =c(1,10)
+plot(a,a,type="b",lty=1)
+plot(a,a,type="b",lty=2)
+b=1:6
+abline(h=b,lty=b)
+abline(v=b,lty=b)
+abline(a=4,b=5,lty=b)
+abline(a=0,b=5,lty=b)
+x=1:25
+y=1:25
+plot(x,y)
+help(plot)
+
+################################################################################
+week = c(15872,31744,63488,95232,126976)
+x1 = c(5148,6241,6929,7196,7270)
+x2 = c(5948,7570,8878,9381,9632)
+x3 = c(3325,4281,4921,5175,5322)
+x4 = c(3373,4350,5177,5525,5775)
+
+#sp1 = spline(week,x1,n=1000)
+#sp2 = spline(week,x2,n=1000)
+#sp3 = spline(week,x3,n=1000)
+#sp4 = spline(week,x4,n=1000)
+#plot(sp1,type="l",col="red",xlim=c(0,140000),ylim=c(3000,10000))
+#lines(sp2,type="l",col="green")
+#lines(sp3,type="l",col="yellow")
+#lines(sp4,type="l",col="blue")
+
+plot(week,x1,type="o",pch=16,col='blue',ylim=c(3000,10000),xlim=c(0,140000),xlab="Miseq-TRA")
+lines(week,x2,type="o",pch=16,col='orange',xlab="Mseq-TRB")
+lines(week,x3,type="o",pch=16,col='grey',xlab="Hiseq-TRA")
+lines(week,x4,type="o",pch=16,col='yellow',xlab="Hiseq-TRB")
+abline(lm(x1~week),col="blue",lty=2)
+abline(lm(x2~week),col="orange",lty=2)
+abline(lm(x3~week),col="grey",lty=2)
+abline(lm(x4~week),col="yellow",lty=2)
+grid()
+trendline(week,x1)
+trendline(week,x1,model = "line2P", plot = TRUE, linecolor = "red",lty = 1, lwd = 1, summary = TRUE, ePos = "topleft", eDigit = 5, eSize = 1)
+library(trendline)
+library(basicTrendline)
+#install.packages("basicTrendline")
+#######################################################################################
+x = c(15872,31744,63488,95232,126976)
+y1 = c(5148,6241,6929,7196,7270)
+y2=c(5948,7570,8878,9381,9632)
+y3=c(3325,4281,4921,5175,5322)
+y4=c(3373,4350,5177,5525,5775)
+plot(x,y1,type="o",pch=16,col='blue',ylim=c(3000,10000),xlim=c(0,140000),xlab="Miseq-TRA")
+#trendline(x, y1,model = "line2P", plot = TRUE, linecolor = "blue",summary=TRUE, lty = 1, lwd = 1)
+#trendline(x, y1,model = "line3P", plot = FALSE, linecolor = "blue")
+trendline(x, y1,model = "log2P", linecolor = "blue",plot=TRUE, se = FALSE)
+trendline(x, y2,model = "log2P", linecolor = "blue",plot=TRUE, se = FALSE)
+trendline(x, y3,model = "log2P", linecolor = "blue",plot=TRUE, se = FALSE)
+trendline(x, y4,model = "log2P", linecolor = "blue",plot=TRUE, se = FALSE)
+#trendline(x, y1,model = "exp3P", plot = FALSE, linecolor = "blue")
+#trendline(x, y1,model = "power3P", plot = FALSE, linecolor = "blue")
+
+trendline(x1,y1,model="line2P",summary=TRUE,eDigit=10)
+trendline(x2,y2,model="line3P",summary=FALSE,ePos="topright")
+trendline(x3,y3,model="log2P",linecolor="blue")
+trendline(x4,y4,model="exp3P",eSize=0.7) #change the font size of equation.
+trendline(x5,y5,model="power3P")
+
+
+x <- 1:10
+y <- jitter(x^2)
+opar <- par
+par(mfcol=c(2,2))
+trend.line(x,y,type='linear',plot=TRUE,pch=20,main='Linear')
+trend.line(x,y,type='exponential',plot=TRUE,pch=20,main='Exponential')
+trend.line(x,y,type='logarithmic',plot=TRUE,pch=20,main='Logarithmic')
+trend.line(x,y,type='polynomial',plot=TRUE,pch=20,main='Polynomial')
+par <- opar
