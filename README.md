@@ -55,7 +55,8 @@ Rscript venn.R \<file1\> \<file2\> ...
 ![VennDiagram.triple.png](VennDiagram.triple.png)
 ![VennDiagram.quad.png](VennDiagram.quad.png)
 ![VennDiagram.quintuple.png](VennDiagram.quintuple.png)
-<img src="https://github.com/levinyi/R_stuff/VennDiagram.pairwise.png" width="150" height="200" alt="图片描述文字"/>  
+<img src="https://github.com/levinyi/R_stuff/VennDiagram.pairwise.png" width="500" height="500" alt="图片描述文字"/>  
+<img src="VennDiagram.pairwise.png" width="500" height="500" alt="图片描述文字"/>  
 # basic boxplot
 Rscript ggplot_boxplot_basic.R \<file\>
 
