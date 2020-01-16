@@ -72,10 +72,10 @@ correlation.point.log.R
 GO enrichment and KEGG enrichment analysis examples
 
 # Clustering Analysis practice
-hierarchical clustering example 1:https://www.jianshu.com/p/f2413cdfd4f0
-hierarchical clustering example 2:https://www.jianshu.com/p/4131fbf8cd3e
-hierarchical clustering example 3:https://www.jianshu.com/p/60c490fe2a1f
-K-means clustering example 1:https://www.jianshu.com/p/dfc6f9b13256
-K-means clustering example 2:https://www.jianshu.com/p/eb9d6e9670c5
+hierarchical clustering example 1:https://www.jianshu.com/p/f2413cdfd4f0  
+hierarchical clustering example 2:https://www.jianshu.com/p/4131fbf8cd3e  
+hierarchical clustering example 3:https://www.jianshu.com/p/60c490fe2a1f  
+K-means clustering example 1:https://www.jianshu.com/p/dfc6f9b13256  
+K-means clustering example 2:https://www.jianshu.com/p/eb9d6e9670c5  
 
 # 10X Genomics RNA-seq analysis
