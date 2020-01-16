@@ -51,12 +51,10 @@ R_Graphics_Cookbook.2.R is a note book.
 # Venn diagram
 see: https://www.jianshu.com/p/05f4bae28443
 Rscript venn.R \<file1\> \<file2\> ...
-![pairwise venn diagram](VennDiagram.pairwise.png)
-![VennDiagram.triple.png](VennDiagram.triple.png)
-![VennDiagram.quad.png](VennDiagram.quad.png)
-![VennDiagram.quintuple.png](VennDiagram.quintuple.png)
-<img src="https://github.com/levinyi/R_stuff/VennDiagram.pairwise.png" width="500" height="500" alt="图片描述文字"/>  
-<img src="VennDiagram.pairwise.png" width="500" height="500" alt="图片描述文字"/>  
+<img src="VennDiagram.pairwise.png" width="300" height="300" alt="VennDiagram.pairwise.png"/>  
+<img src="VennDiagram.triple.png" width="300" height="300" alt="VennDiagram.triple.png"/>  
+<img src="VennDiagram.quad.png" width="300" height="300" alt="VennDiagram.quad.png"/>  
+<img src="VennDiagram.quintuple.png" width="300" height="300" alt="VennDiagram.quintuple.png"/>  
 # basic boxplot
 Rscript ggplot_boxplot_basic.R \<file\>
 
