@@ -50,12 +50,11 @@ R_Graphics_Cookbook.2.R is a note book.
 
 # Venn diagram
 see: https://www.jianshu.com/p/05f4bae28443
-Rscript venn.R \<file1\> \<file2\> ...
-![pairwise venn diagram](VennDiagram.pairwise.png)
-![VennDiagram.triple.png](VennDiagram.triple.png)
-![VennDiagram.quad.png](VennDiagram.quad.png)
-![VennDiagram.quintuple.png](VennDiagram.quintuple.png)
-
+Rscript venn.R \<file1\> \<file2\> ...  
+<img src="VennDiagram.pairwise.png" width="300" height="300" alt="VennDiagram.pairwise.png"/>
+<img src="VennDiagram.triple.png" width="300" height="300" alt="VennDiagram.triple.png"/>
+<img src="VennDiagram.quad.png" width="300" height="300" alt="VennDiagram.quad.png"/>
+<img src="VennDiagram.quintuple.png" width="300" height="300" alt="VennDiagram.quintuple.png"/>  
 # basic boxplot
 Rscript ggplot_boxplot_basic.R \<file\>
 
@@ -67,3 +66,15 @@ Rscript geom_boxplot.R \<boxplot.data.txt\> ...
 there are two scripts to draw correlation graph.
 correlation.point.R
 correlation.point.log.R
+
+# EnrichmentAnalysis
+GO enrichment and KEGG enrichment analysis examples
+
+# Clustering Analysis practice
+hierarchical clustering example 1:https://www.jianshu.com/p/f2413cdfd4f0  
+hierarchical clustering example 2:https://www.jianshu.com/p/4131fbf8cd3e  
+hierarchical clustering example 3:https://www.jianshu.com/p/60c490fe2a1f  
+K-means clustering example 1:https://www.jianshu.com/p/dfc6f9b13256  
+K-means clustering example 2:https://www.jianshu.com/p/eb9d6e9670c5  
+
+# 10X Genomics RNA-seq analysis
