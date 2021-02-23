@@ -30,11 +30,14 @@ if ( args_length == 2 ){
 	
 	venn.diagram(list(A=A,B=B,C=C), 
 	     resolution = 300, imagetype = "png", 
-	     cat.fontface=4, fontfamily=3,
+	     cat.fontface=10, fontfamily=3,
 	     category.names = c(file_name1,file_name2,file_name3),
-	     fill = c("blue", "red", "green"),
-	     cat.col = c("blue", "red", "green"),
-	     lty = "blank",
+	     fill = c("light blue", "pink", "light green"),
+	     #fill = c("white","white", "white"),
+	     # cat.col = c("black","black","black"),
+	     # cat.col = c("blue", "red", "green"),
+	     alpha = 1,
+	     #lty = "blank",
 	     main="", main.cex = 2,main.fontface=2, main.fontfamily=3,
 	     filename = "VennDiagram.triple.png")
 	print("Output graph : VennDiagram.triple.png")
