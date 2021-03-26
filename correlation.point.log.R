@@ -37,12 +37,12 @@ for (each_file in args) {
     }else{
             max_scale = max(log(data[,3], 10))
     }
-    # p = ggplot(data, aes(data[,2], data[, 3])) +
+    x_center = (max(log(data[,2],10)) + min(log(data[,2],10))) / 2
     p = ggplot(data, aes(log(data[,2], 10), log(data[,3], 10))) +
         geom_point(size=0.5, color=brewer.pal(7,"Set1")[2] ) + # default size is 2
         xlab(names(data)[2]) + ylab(names(data)[3]) +
         #annotate("text",x=-Inf,y= Inf,hjust=0,vjust=0.99,label=paste(paste( "pearson", round(c,4), sep=":"),paste("spearman", round(d,4), sep=":"),sep=("\n"))) +
-	annotate("text", x=0, y=Inf, hjust=0, vjust=0.99, size=12, label=paste("Sq.R",round(d,4),sep="="))+
+	annotate("text", x=x_center, y=Inf, hjust=0.5, vjust=0.99, size=12, label=paste("Sq.R",round(d,4),sep="="))+
         # scale_x_continuous(limits=c(0, max_scale))+
         # scale_y_continuous(limits=c(0, max_scale))+
         # scale_x_log10() +
