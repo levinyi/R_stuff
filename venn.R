@@ -1,4 +1,5 @@
 library(VennDiagram)
+library(RColorBrewer)
 args=commandArgs(T)
 
 args_length = length(args)
@@ -11,11 +12,23 @@ if ( args_length == 2 ){
 	
 	venn.diagram(list(A=A, A=B), 
 	     resolution = 300, imagetype = "png", 
-	     cat.fontface=4, fontfamily=3,
+	     col = RColorBrewer::brewer.pal(7, "Dark2")[1:2], 
+	     cex = 4, # size
+	     label.col=c("black"),
+	     lwd = 4, 
+	     lty = 1,
+	     # for category:
+	     cat.fontface="bold", # font type.
 	     category.names = c(file_name1,file_name2),
-	     fill = c("blue","red"),
-	     cat.col = c("blue","red"),
-	     main="", main.cex = 2,main.fontface=2, main.fontfamily=3,
+	     cat.cex = 3.5,
+	     # fill = c("blue","red"), # no fill is more beautiful.
+	     cat.col = RColorBrewer::brewer.pal(7, "Dark2")[1:2],
+	     area.vector = TRUE,
+	     # for main title:
+	     main="", main.cex = 2,main.col = "black", main.fontface=2, 
+	     sub.fontfamily = "serif", main.just = 0,
+	     # for subtitle:
+	     sub = "", sub.cex = 4, sub.col = "black", sub.fontface = 2,
 	     filename = "VennDiagram.pairwise.png")
 	print("Output graph : VennDiagram.pairwise.png")
 
